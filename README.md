@@ -128,19 +128,6 @@ npx serve template
 
 ---
 
-## 📸 截图
-
-> 💡 将截图放入 `screenshots/` 文件夹，替换下方链接
-
-| 首页 | 岗位列表 |
-|------|---------|
-| ![首页](screenshots/index.png) | ![岗位列表](screenshots/jobs.png) |
-
-| Offer 对比 | 入职清单 |
-|-----------|---------|
-| ![Offer对比](screenshots/offer.png) | ![入职清单](screenshots/onboarding.png) |
-
----
 
 ## 🛠️ 技术栈
 
