@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>岗位详情 - 应届生求职服务平台</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/jobs.css">
+  <link rel="stylesheet" href="css/job-detail.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="bg-animation"><div class="orb"></div><div class="orb"></div><div class="orb"></div></div>
+
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-brand">
+      <div class="logo"><i class="fas fa-rocket"></i></div>
+      <span>应届生求职平台</span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">首页</a>
+      <a href="jobs.html">岗位推荐</a>
+      <a href="offer-compare.html">Offer对比</a>
+      <a href="onboarding.html">入职清单</a>
+    </div>
+    <div class="nav-actions">
+      <a href="login.html" class="btn btn-ghost">登录</a>
+      <a href="register.html" class="btn btn-primary btn-sm">注册</a>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="菜单"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="section" style="padding-top:120px;">
+    <div class="container">
+      <a href="jobs.html" style="color:var(--text-muted);font-size:0.9rem;display:inline-flex;align-items:center;gap:6px;margin-bottom:var(--space-lg)">
+        <i class="fas fa-arrow-left"></i> 返回岗位列表
+      </a>
+
+      <div class="jd-layout">
+        <!-- 左侧主内容 -->
+        <div class="jd-main">
+          <!-- 头部信息 -->
+          <div class="card jd-header-card">
+            <div class="jd-header-top">
+              <div class="jd-company-logo">🏢</div>
+              <div class="jd-title-area">
+                <h1 class="jd-job-title">后端开发工程师（应届生）</h1>
+                <div class="jd-company-name">
+                  <span>字节跳动</span>
+                  <span class="badge badge-tech">技术</span>
+                  <span class="badge badge-hot">🔥 热门</span>
+                </div>
+              </div>
+              <div class="jd-salary">35-45万/年</div>
+            </div>
+            <div class="jd-meta-tags">
+              <span><i class="fas fa-map-marker-alt"></i> 北京·海淀区</span>
+              <span><i class="fas fa-user-graduate"></i> 应届生</span>
+              <span><i class="fas fa-clock"></i> 3天前发布</span>
+              <span><i class="fas fa-eye"></i> 1280人浏览</span>
+            </div>
+          </div>
+
+          <!-- 岗位描述 -->
+          <div class="card jd-section">
+            <h3 class="jd-section-title"><i class="fas fa-file-alt"></i> 岗位描述</h3>
+            <div class="jd-content">
+              <p>负责字节跳动核心业务系统的后端开发，参与系统架构设计、功能开发和性能优化。</p>
+              <ul>
+                <li>参与需求分析、系统设计、编码实现和单元测试</li>
+                <li>负责核心模块的架构设计和代码编写</li>
+                <li>参与系统性能优化和稳定性保障</li>
+                <li>与产品、前端、测试等团队紧密协作</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 任职要求 -->
+          <div class="card jd-section">
+            <h3 class="jd-section-title"><i class="fas fa-clipboard-check"></i> 任职要求</h3>
+            <div class="jd-content">
+              <ul>
+                <li>计算机相关专业，本科及以上学历，2025届应届生</li>
+                <li>扎实的计算机基础，熟悉数据结构、算法、操作系统</li>
+                <li>熟悉 Java/Go/Python 其中一种后端语言</li>
+                <li>了解 MySQL、Redis 等常用数据库和中间件</li>
+                <li>有良好的编码习惯和文档写作能力</li>
+                <li>有实习经验或开源项目贡献者优先</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 福利待遇 -->
+          <div class="card jd-section">
+            <h3 class="jd-section-title"><i class="fas fa-gift"></i> 福利待遇</h3>
+            <div class="jd-benefits">
+              <span class="jd-benefit-tag">💰 年终奖 3-6 个月</span>
+              <span class="jd-benefit-tag">🍱 免费三餐+零食</span>
+              <span class="jd-benefit-tag">🏠 住房补贴</span>
+              <span class="jd-benefit-tag">✈️ 带薪年假 15 天</span>
+              <span class="jd-benefit-tag">📚 学习津贴</span>
+              <span class="jd-benefit-tag">🏥 补充商业医疗</span>
+            </div>
+          </div>
+
+          <!-- 公司介绍 -->
+          <div class="card jd-section">
+            <h3 class="jd-section-title"><i class="fas fa-building"></i> 公司介绍</h3>
+            <div class="jd-content">
+              <p>字节跳动是全球领先的内容平台公司，旗下拥有抖音、今日头条、西瓜视频等多款明星产品，全球员工超过15万人，业务遍布150多个国家和地区。</p>
+              <div class="jd-company-stats">
+                <div class="jd-cs-item"><div class="jd-cs-num">15万+</div><div class="jd-cs-label">全球员工</div></div>
+                <div class="jd-cs-item"><div class="jd-cs-num">150+</div><div class="jd-cs-label">国家和地区</div></div>
+                <div class="jd-cs-item"><div class="jd-cs-num">数十亿</div><div class="jd-cs-label">全球用户</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 右侧侧边栏 -->
+        <div class="jd-sidebar">
+          <div class="card jd-apply-card">
+            <button class="btn btn-primary btn-lg" style="width:100%;margin-bottom:var(--space-md)" onclick="alert('请先登录！')">
+              <i class="fas fa-paper-plane"></i> 立即投递
+            </button>
+            <button class="btn btn-outline" style="width:100%">
+              <i class="far fa-star"></i> 收藏岗位
+            </button>
+            <div style="margin-top:var(--space-lg);font-size:0.82rem;color:var(--text-muted);line-height:1.8">
+              <div>📅 截止日期：2025-10-31</div>
+              <div>📍 工作地点：北京·海淀区</div>
+              <div>🎓 学历要求：本科及以上</div>
+              <div>📊 投递人数：328人</div>
+            </div>
+          </div>
+
+          <div class="card jd-similar">
+            <h4 style="margin-bottom:var(--space-md);font-size:1rem;">相似岗位</h4>
+            <a href="#" class="jd-similar-item">
+              <div style="font-weight:600;font-size:0.9rem;">前端开发工程师</div>
+              <div style="font-size:0.8rem;color:var(--text-muted);margin-top:2px;">字节跳动 · 30-42万/年</div>
+            </a>
+            <a href="#" class="jd-similar-item">
+              <div style="font-weight:600;font-size:0.9rem;">算法工程师</div>
+              <div style="font-size:0.8rem;color:var(--text-muted);margin-top:2px;">字节跳动 · 32-44万/年</div>
+            </a>
+            <a href="#" class="jd-similar-item">
+              <div style="font-weight:600;font-size:0.9rem;">测试开发工程师</div>
+              <div style="font-size:0.8rem;color:var(--text-muted);margin-top:2px;">字节跳动 · 25-35万/年</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="justify-content:center"><span>© 2025 应届生求职服务平台</span></div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,581 @@
+/**
+ * 首页专用样式 - index.html
+ */
+
+/* ============================ Hero ============================ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: center;
+  padding-top: var(--space-3xl);
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: var(--space-lg);
+  letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: var(--space-2xl);
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--space-md);
+  margin-bottom: var(--space-2xl);
+  flex-wrap: wrap;
+}
+
+/* 数据统计 */
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.stat-item { text-align: center; }
+
+.stat-num {
+  display: block;
+  font-size: 2rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--accent), var(--primary-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.stat-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Hero 右侧卡片 */
+.hero-visual {
+  position: relative;
+  height: 400px;
+}
+
+.hero-card {
+  position: absolute;
+  background: var(--bg-card);
+  border: 1px solid rgba(79, 110, 247, 0.2);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  animation: cardFloat 6s ease-in-out infinite;
+  box-shadow: var(--shadow-card);
+}
+
+.hero-card-1 {
+  top: 20px; left: 20px;
+  animation-delay: 0s;
+}
+
+.hero-card-2 {
+  top: 150px; right: 20px;
+  animation-delay: -2s;
+}
+
+.hero-card-3 {
+  bottom: 40px; left: 60px;
+  animation-delay: -4s;
+  width: 70%;
+}
+
+@keyframes cardFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+
+.hc-icon {
+  width: 48px; height: 48px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.hc-icon.purple {
+  background: linear-gradient(135deg, var(--accent-secondary), var(--primary));
+}
+
+.hc-info { flex: 1; }
+
+.hc-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 2px;
+}
+
+.hc-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.hc-badge.success {
+  width: 28px; height: 28px;
+  background: var(--success);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.hc-arrow {
+  color: var(--accent);
+  font-size: 1.2rem;
+}
+
+.hc-progress {
+  width: 100%;
+  height: 8px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: var(--space-sm);
+}
+
+.hc-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: 4px;
+  transition: width 1.5s ease;
+}
+
+.hc-progress-text {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* ============================ 轮播公告 ============================ */
+.carousel-section {
+  padding-top: 0;
+}
+
+.carousel-wrapper {
+  background: var(--bg-card);
+  border: 1px solid rgba(79, 110, 247, 0.15);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg) var(--space-xl);
+  backdrop-filter: blur(10px);
+}
+
+.carousel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-md);
+}
+
+.carousel-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.carousel-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.carousel-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.carousel-dot.active {
+  background: var(--accent);
+  width: 24px;
+  border-radius: 4px;
+}
+
+.carousel-track {
+  position: relative;
+  height: 60px;
+  overflow: hidden;
+}
+
+.carousel-item {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  padding: var(--space-sm) 0;
+  opacity: 0;
+  transform: translateX(30px);
+  transition: all 0.5s ease;
+  pointer-events: none;
+}
+
+.carousel-item.active {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.ci-badge {
+  flex-shrink: 0;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.ci-badge.hot  { background: rgba(239,68,68,0.15); color: var(--danger); }
+.ci-badge.new  { background: rgba(34,197,94,0.15); color: var(--success); }
+.ci-badge.info { background: rgba(59,130,246,0.15); color: var(--info); }
+
+.ci-text {
+  flex: 1;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.ci-link {
+  flex-shrink: 0;
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* ============================ 服务卡片 ============================ */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+
+.service-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(79, 110, 247, 0.12);
+  border-radius: var(--radius-md);
+  padding: var(--space-2xl);
+  backdrop-filter: blur(10px);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(79, 110, 247, 0.3);
+  box-shadow: var(--shadow-glow);
+}
+
+.service-card:hover::before { opacity: 1; }
+
+.sc-icon {
+  width: 56px; height: 56px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: var(--space-lg);
+}
+
+.sc-icon.blue   { background: linear-gradient(135deg, #4f6ef7, #7b93fa); }
+.sc-icon.cyan   { background: linear-gradient(135deg, #00d4ff, #4f6ef7); }
+.sc-icon.purple { background: linear-gradient(135deg, #a855f7, #7b93fa); }
+.sc-icon.green  { background: linear-gradient(135deg, #22c55e, #4f6ef7); }
+.sc-icon.orange { background: linear-gradient(135deg, #f59e0b, #ef4444); }
+.sc-icon.pink   { background: linear-gradient(135deg, #ec4899, #a855f7); }
+
+.service-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--space-lg);
+}
+
+.sc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: gap var(--transition-fast);
+}
+
+.sc-link:hover { gap: var(--space-md); }
+
+/* ============================ 岗位预览卡片 ============================ */
+.jobs-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+  margin-bottom: var(--space-2xl);
+}
+
+.job-preview-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(79, 110, 247, 0.12);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+  backdrop-filter: blur(10px);
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.job-preview-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(79, 110, 247, 0.3);
+  box-shadow: var(--shadow-glow);
+}
+
+.jpc-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.jpc-logo {
+  width: 48px; height: 48px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-glass);
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.jpc-company {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.jpc-job-title {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.jpc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.jpc-tag {
+  padding: 3px 10px;
+  background: rgba(79, 110, 247, 0.1);
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.jpc-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.jpc-salary {
+  font-weight: 800;
+  font-size: 1.1rem;
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.jpc-meta {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ============================ 时间线 ============================ */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--space-xl) 0;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--primary), var(--accent), var(--accent-secondary));
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: var(--space-md) var(--space-2xl);
+  margin-bottom: var(--space-xl);
+}
+
+.timeline-item.left { text-align: right; padding-right: 60px; }
+.timeline-item.right { margin-left: 50%; padding-left: 60px; }
+
+.timeline-dot {
+  position: absolute;
+  top: 20px;
+  width: 16px; height: 16px;
+  background: var(--primary);
+  border-radius: 50%;
+  border: 3px solid var(--bg-primary);
+  z-index: 1;
+}
+
+.timeline-item.left .timeline-dot  { right: -8px; }
+.timeline-item.right .timeline-dot { left: -8px; }
+
+.timeline-card {
+  padding: var(--space-lg);
+  text-align: left;
+}
+
+.timeline-date {
+  display: inline-block;
+  padding: 2px 12px;
+  background: rgba(79, 110, 247, 0.15);
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+}
+
+.timeline-card h4 {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-sm);
+}
+
+.timeline-card p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ============================ CTA ============================ */
+.cta-section { padding-top: 0; }
+
+.cta-card {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: var(--space-3xl) var(--space-xl);
+}
+
+.cta-content { position: relative; z-index: 1; }
+
+.cta-card h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: var(--space-md);
+}
+
+.cta-card p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-2xl);
+}
+
+.cta-actions {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-decoration { position: absolute; top:0; left:0; width:100%; height:100%; pointer-events: none; }
+
+.cta-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.3;
+}
+
+.cta-circle.c1 { width:300px;height:300px;background:var(--primary);top:-100px;left:-50px; }
+.cta-circle.c2 { width:250px;height:250px;background:var(--accent);bottom:-80px;right:-50px; }
+.cta-circle.c3 { width:200px;height:200px;background:var(--accent-secondary);top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.15; }
+
+/* ============================ 响应式 ============================ */
+@media (max-width: 1024px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero-title { font-size: 2.5rem; }
+  .hero-actions { justify-content: center; }
+  .hero-stats  { justify-content: center; }
+  .hero-visual { display: none; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .jobs-preview-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .hero-title { font-size: 2rem; }
+  .hero-stats { flex-direction: column; gap: var(--space-md); }
+  .stat-divider { width:40px;height:1px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .jobs-preview-grid { grid-template-columns: 1fr; }
+  .timeline-line { left: 20px; }
+  .timeline-item { width:100%; margin-left:0; padding-left:50px; padding-right:0; }
+  .timeline-item.left { text-align:left; padding-right:0; padding-left:50px; }
+  .timeline-item.left .timeline-dot,
+  .timeline-item.right .timeline-dot { left:12px; right:auto; }
+  .cta-card h2 { font-size: 1.5rem; }
+}

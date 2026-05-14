@@ -1,0 +1,249 @@
+/**
+ * 入职材料清单页专用样式 - onboarding.html
+ */
+
+/* ============================ 公司类型选择 ============================ */
+.ob-type-selector {
+  margin-bottom: var(--space-2xl);
+}
+
+.ob-types {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.ob-type-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 10px 22px;
+  border: 1.5px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.ob-type-btn:hover {
+  border-color: var(--primary);
+  color: var(--text-primary);
+  background: rgba(79,110,247,0.08);
+}
+
+.ob-type-btn.active {
+  border-color: var(--primary);
+  background: linear-gradient(135deg, rgba(79,110,247,0.15), rgba(0,212,255,0.1));
+  color: var(--accent);
+  box-shadow: 0 0 20px rgba(79,110,247,0.2);
+}
+
+/* ============================ 进度条 ============================ */
+.ob-progress-wrap {
+  margin-bottom: var(--space-2xl);
+  background: var(--bg-card);
+  border: 1px solid rgba(79,110,247,0.12);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg) var(--space-xl);
+  backdrop-filter: blur(10px);
+}
+
+.ob-progress-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-sm);
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+#obProgressText {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.ob-progress-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.ob-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--accent), var(--accent-secondary));
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+/* ============================ 清单分类 ============================ */
+.ob-category {
+  margin-bottom: var(--space-2xl);
+}
+
+.ob-cat-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+  cursor: pointer;
+  user-select: none;
+}
+
+.ob-cat-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.ob-cat-icon.blue   { background: linear-gradient(135deg, var(--primary), var(--primary-light)); }
+.ob-cat-icon.green  { background: linear-gradient(135deg, var(--success), #16a34a); }
+.ob-cat-icon.orange { background: linear-gradient(135deg, var(--warning), #ea580c); }
+.ob-cat-icon.purple { background: linear-gradient(135deg, var(--accent-secondary), var(--primary)); }
+.ob-cat-icon.cyan   { background: linear-gradient(135deg, var(--accent), var(--primary)); }
+
+.ob-cat-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.ob-cat-count {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-left: auto;
+}
+
+.ob-cat-toggle {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  transition: transform var(--transition-fast);
+}
+
+.ob-cat-header.collapsed .ob-cat-toggle {
+  transform: rotate(-90deg);
+}
+
+.ob-cat-items {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-sm);
+  padding-left: var(--space-2xl);
+}
+
+.ob-cat-header.collapsed + .ob-cat-items {
+  display: none;
+}
+
+/* ============================ 清单项 ============================ */
+.ob-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.ob-item:hover {
+  background: rgba(79,110,247,0.06);
+  border-color: rgba(79,110,247,0.15);
+}
+
+.ob-item.checked {
+  background: rgba(34,197,94,0.06);
+  border-color: rgba(34,197,94,0.15);
+}
+
+.ob-item.checked .ob-item-text {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.ob-cb {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 2px solid rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.ob-item.checked .ob-cb {
+  background: var(--success);
+  border-color: var(--success);
+}
+
+.ob-cb i {
+  font-size: 0.7rem;
+  color: #fff;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.ob-item.checked .ob-cb i {
+  opacity: 1;
+}
+
+.ob-item-text {
+  flex: 1;
+  font-size: 0.92rem;
+  color: var(--text-primary);
+}
+
+.ob-item-tag {
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.ob-item-tag.important {
+  background: rgba(239,68,68,0.15);
+  color: var(--danger);
+}
+
+.ob-item-tag.optional {
+  background: rgba(107,115,148,0.15);
+  color: var(--text-muted);
+}
+
+/* ============================ 操作按钮 ============================ */
+.ob-actions {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: var(--space-2xl);
+}
+
+/* ============================ 温馨提示 ============================ */
+.ob-tips {
+  background: rgba(0,212,255,0.05) !important;
+}
+
+.ob-tips h4 {
+  font-size: 1rem;
+}
+
+/* ============================ 响应式 ============================ */
+@media (max-width: 768px) {
+  .ob-types { flex-direction: column; }
+  .ob-type-btn { justify-content: center; }
+  .ob-cat-items { padding-left: var(--space-md); }
+}

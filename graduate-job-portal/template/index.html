@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>应届生求职服务平台 - 你的职场第一步</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/index.css">
+  <!-- 图标库 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- ========== 背景动画 ========== -->
+  <div class="bg-animation">
+    <div class="orb"></div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+  </div>
+
+  <!-- ========== 导航栏 ========== -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-brand">
+      <div class="logo"><i class="fas fa-rocket"></i></div>
+      <span>应届生求职平台</span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" class="active">首页</a>
+      <a href="jobs.html">岗位推荐</a>
+      <a href="offer-compare.html">Offer对比</a>
+      <a href="onboarding.html">入职清单</a>
+      <a href="#">求职指南</a>
+    </div>
+    <div class="nav-actions">
+      <a href="login.html" class="btn btn-ghost">登录</a>
+      <a href="register.html" class="btn btn-primary">免费注册</a>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== Hero 区域 ========== -->
+  <section class="hero">
+    <div class="hero-particles" id="heroParticles"></div>
+    <div class="container hero-content">
+      <div class="hero-text fade-in-up">
+        <h1 class="hero-title">
+          开启你的<br><span class="text-gradient">职场第一步</span>
+        </h1>
+        <p class="hero-subtitle">
+          专为2025届应届生打造的求职服务平台。<br>
+          智能岗位匹配 · Offer对比分析 · 入职全流程指导
+        </p>
+        <div class="hero-actions">
+          <a href="jobs.html" class="btn btn-primary btn-lg">
+            <i class="fas fa-search"></i> 浏览岗位
+          </a>
+          <a href="offer-compare.html" class="btn btn-outline btn-lg">
+            <i class="fas fa-balance-scale"></i> Offer对比
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-num" data-target="12890">0</span>
+            <span class="stat-label">在招岗位</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num" data-target="3680">0</span>
+            <span class="stat-label">合作企业</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num" data-target="89500">0</span>
+            <span class="stat-label">成功入职</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual fade-in-up delay-2">
+        <!-- 模拟简历/Offer卡片 -->
+        <div class="hero-card hero-card-1">
+          <div class="hc-icon"><i class="fas fa-file-alt"></i></div>
+          <div class="hc-info">
+            <div class="hc-title">简历优化完成</div>
+            <div class="hc-desc">匹配度提升 42%</div>
+          </div>
+          <div class="hc-badge success">✓</div>
+        </div>
+        <div class="hero-card hero-card-2">
+          <div class="hc-icon purple"><i class="fas fa-handshake"></i></div>
+          <div class="hc-info">
+            <div class="hc-title">3个Offer待抉择</div>
+            <div class="hc-desc">点击查看对比分析</div>
+          </div>
+          <div class="hc-arrow"><i class="fas fa-arrow-right"></i></div>
+        </div>
+        <div class="hero-card hero-card-3">
+          <div class="hc-progress">
+            <div class="hc-progress-bar" style="width:78%"></div>
+          </div>
+          <div class="hc-progress-text">入职准备进度 78%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 轮播公告 ========== -->
+  <section class="section carousel-section">
+    <div class="container">
+      <div class="carousel-wrapper">
+        <div class="carousel-header">
+          <div class="carousel-tag">
+            <i class="fas fa-bullhorn"></i> 平台公告
+          </div>
+          <div class="carousel-dots" id="carouselDots"></div>
+        </div>
+        <div class="carousel-track" id="carouselTrack">
+          <!-- 轮播项由JS动态生成 -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 服务介绍 ========== -->
+  <section class="section services-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">我们的服务</div>
+        <h2 class="section-title">一站式求职解决方案</h2>
+        <p class="section-subtitle">从简历投递到入职准备，全程陪伴你的求职之旅</p>
+      </div>
+      <div class="services-grid">
+        <!-- 卡片1 -->
+        <div class="service-card fade-in-up">
+          <div class="sc-icon blue">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <h3>智能岗位推荐</h3>
+          <p>基于AI算法，根据你的专业、技能和期望薪资，精准推荐最适合的校招岗位。</p>
+          <a href="jobs.html" class="sc-link">立即探索 <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <!-- 卡片2 -->
+        <div class="service-card fade-in-up delay-1">
+          <div class="sc-icon cyan">
+            <i class="fas fa-balance-scale"></i>
+          </div>
+          <h3>Offer智能对比</h3>
+          <p>多维度对比薪资待遇、发展前景、工作强度，帮你做出最优选择。</p>
+          <a href="offer-compare.html" class="sc-link">开始对比 <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <!-- 卡片3 -->
+        <div class="service-card fade-in-up delay-2">
+          <div class="sc-icon purple">
+            <i class="fas fa-clipboard-check"></i>
+          </div>
+          <h3>入职材料清单</h3>
+          <p>按公司类型生成个性化入职材料清单，不再遗漏任何重要文件。</p>
+          <a href="onboarding.html" class="sc-link">查看清单 <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <!-- 卡片4 -->
+        <div class="service-card fade-in-up delay-3">
+          <div class="sc-icon green">
+            <i class="fas fa-file-signature"></i>
+          </div>
+          <h3>三方协议指导</h3>
+          <p>三方协议填写模板、注意事项详解，避免签约踩坑。</p>
+          <a href="#" class="sc-link">查看指南 <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <!-- 卡片5 -->
+        <div class="service-card fade-in-up delay-4">
+          <div class="sc-icon orange">
+            <i class="fas fa-user-tie"></i>
+          </div>
+          <h3>面试真题库</h3>
+          <p>汇集各大厂最新面试题，含答案解析，助你轻松应对面试。</p>
+          <a href="#" class="sc-link">开始刷题 <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <!-- 卡片6 -->
+        <div class="service-card fade-in-up delay-5">
+          <div class="sc-icon pink">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>职场社群</h3>
+          <p>加入同届求职者社群，共享内推资源，求职路上不孤单。</p>
+          <a href="#" class="sc-link">加入社群 <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 热门岗位推荐 ========== -->
+  <section class="section jobs-preview-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">热门推荐</div>
+        <h2 class="section-title">精选校招岗位</h2>
+        <p class="section-subtitle">今日更新 · 经过平台认证 · 专为应届生筛选</p>
+      </div>
+      <div class="jobs-preview-grid" id="hotJobsGrid">
+        <!-- 由JS动态生成 -->
+      </div>
+      <div class="text-center mt-4">
+        <a href="jobs.html" class="btn btn-outline btn-lg">
+          查看全部岗位 <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 求职时间线 ========== -->
+  <section class="section timeline-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">求职日历</div>
+        <h2 class="section-title">校招关键时间节点</h2>
+        <p class="section-subtitle">把握每一个关键时机，赢在起跑线</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-line"></div>
+        <div class="timeline-item left fade-in-up">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card card">
+            <div class="timeline-date">6月-7月</div>
+            <h4>暑期实习申请</h4>
+            <p>大三结束前的暑期实习是转正的重要机会，建议提前准备简历和面试。</p>
+          </div>
+        </div>
+        <div class="timeline-item right fade-in-up delay-1">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card card">
+            <div class="timeline-date">8月-9月</div>
+            <h4>秋招提前批</h4>
+            <p>各大厂提前批招聘开启，竞争相对较小，建议重点关注。</p>
+          </div>
+        </div>
+        <div class="timeline-item left fade-in-up delay-2">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card card">
+            <div class="timeline-date">9月-11月</div>
+            <h4>秋招正式批</h4>
+            <p>校招主战场，岗位数量最多，建议海投+精准投递相结合。</p>
+          </div>
+        </div>
+        <div class="timeline-item right fade-in-up delay-3">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card card">
+            <div class="timeline-date">3月-5月</div>
+            <h4>春招补录</h4>
+            <p>秋招未果的同学的最后机会，岗位数量较少但竞争也相对小。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA区域 ========== -->
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta-card card">
+        <div class="cta-content">
+          <h2>准备好开启你的职业生涯了吗？</h2>
+          <p>免费注册，立即获取专属求职报告和岗位推荐</p>
+          <div class="cta-actions">
+            <a href="register.html" class="btn btn-primary btn-lg">免费注册</a>
+            <a href="login.html" class="btn btn-outline btn-lg">已有账号？登录</a>
+          </div>
+        </div>
+        <div class="cta-decoration">
+          <div class="cta-circle c1"></div>
+          <div class="cta-circle c2"></div>
+          <div class="cta-circle c3"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 页脚 ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-brand" style="margin-bottom:var(--space-md)">
+            <div class="logo"><i class="fas fa-rocket"></i></div>
+            <span>应届生求职平台</span>
+          </div>
+          <p>专为应届生打造的求职服务平台，提供岗位推荐、Offer对比、入职指导等一站式服务，助力每一位应届生顺利开启职业生涯。</p>
+        </div>
+        <div class="footer-col">
+          <h4>服务</h4>
+          <a href="jobs.html">岗位推荐</a>
+          <a href="offer-compare.html">Offer对比</a>
+          <a href="onboarding.html">入职清单</a>
+          <a href="#">面试题库</a>
+        </div>
+        <div class="footer-col">
+          <h4>关于</h4>
+          <a href="#">关于我们</a>
+          <a href="#">联系我们</a>
+          <a href="#">用户协议</a>
+          <a href="#">隐私政策</a>
+        </div>
+        <div class="footer-col">
+          <h4>关注我们</h4>
+          <a href="#"><i class="fab fa-weixin"></i> 微信公众号</a>
+          <a href="#"><i class="fab fa-weibo"></i> 新浪微博</a>
+          <a href="#"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 应届生求职服务平台 · All Rights Reserved</span>
+        <span>沪ICP备XXXXXXXX号-1</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== JS ========== -->
+  <script src="js/main.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>

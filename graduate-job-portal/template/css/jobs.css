@@ -1,0 +1,256 @@
+/**
+ * 岗位列表页专用样式 - jobs.html
+ */
+
+/* ============================ 页面顶部 ============================ */
+.page-hero {
+  padding: 140px 0 60px;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(79,110,247,0.08) 0%, transparent 100%);
+}
+
+.page-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: var(--space-sm);
+  background: linear-gradient(135deg, var(--text-primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.page-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+/* ============================ 筛选栏 ============================ */
+.filter-bar {
+  margin-bottom: var(--space-xl);
+  padding: var(--space-lg) var(--space-xl);
+}
+
+.filter-row {
+  display: flex;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  flex: 1;
+  min-width: 160px;
+  position: relative;
+}
+
+.filter-group i {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  z-index: 1;
+}
+
+.filter-group:first-child .form-input {
+  padding-left: 44px;
+}
+
+.filter-group select.form-input {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7394' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+/* 标签筛选 */
+.filter-tags {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.ft-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.ft-tag {
+  padding: 5px 14px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.ft-tag:hover,
+.ft-tag.active {
+  border-color: var(--primary);
+  background: rgba(79,110,247,0.12);
+  color: var(--accent);
+}
+
+/* ============================ 结果信息栏 ============================ */
+.result-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-lg);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.sort-options {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.sort-btn {
+  padding: 4px 14px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.sort-btn:hover,
+.sort-btn.active {
+  border-color: var(--primary);
+  color: var(--accent);
+  background: rgba(79,110,247,0.1);
+}
+
+/* ============================ 岗位卡片网格 ============================ */
+.jobs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-xl);
+  margin-bottom: var(--space-2xl);
+}
+
+/* 岗位卡片 */
+.job-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(79,110,247,0.12);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+  backdrop-filter: blur(10px);
+  transition: all var(--transition-base);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.job-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.job-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(79,110,247,0.3);
+  box-shadow: var(--shadow-glow);
+}
+
+.job-card:hover::before { opacity: 1; }
+
+.job-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.jc-logo {
+  width: 52px; height: 52px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-glass);
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.jc-info { flex: 1; }
+
+.jc-company {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 2px;
+}
+
+.jc-title {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.jc-salary {
+  font-weight: 800;
+  font-size: 1.05rem;
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  white-space: nowrap;
+}
+
+.job-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: var(--space-md);
+}
+
+.jc-tag {
+  padding: 3px 10px;
+  background: rgba(79,110,247,0.1);
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.job-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(255,255,255,0.05);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.jc-meta { display: flex; gap: var(--space-md); }
+.jc-meta span { display: flex; align-items: center; gap: 4px; }
+
+/* ============================ 响应式 ============================ */
+@media (max-width: 1024px) {
+  .jobs-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .page-title { font-size: 1.8rem; }
+  .filter-row { flex-direction: column; }
+  .filter-group { min-width: 100%; }
+  .result-info { flex-direction: column; align-items: flex-start; }
+}

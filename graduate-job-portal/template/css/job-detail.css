@@ -1,0 +1,189 @@
+/**
+ * 岗位详情页专用样式 - job-detail.html
+ */
+
+/* ============================ 布局 ============================ */
+.jd-layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .jd-layout { grid-template-columns: 1fr; }
+}
+
+/* ============================ 岗位头部卡片 ============================ */
+.jd-header-card {
+  margin-bottom: var(--space-xl);
+}
+
+.jd-header-top {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.jd-company-logo {
+  width: 64px; height: 64px;
+  border-radius: var(--radius-md);
+  background: var(--bg-glass);
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.jd-title-area { flex: 1; }
+
+.jd-job-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: var(--space-sm);
+}
+
+.jd-company-name {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.jd-salary {
+  font-size: 1.6rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.jd-meta-tags {
+  display: flex;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+}
+
+.jd-meta-tags span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ============================ 内容区块 ============================ */
+.jd-section {
+  margin-bottom: var(--space-xl);
+}
+
+.jd-section-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.jd-section-title i {
+  color: var(--accent);
+}
+
+.jd-content {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.9;
+}
+
+.jd-content p { margin-bottom: var(--space-md); }
+
+.jd-content ul {
+  padding-left: var(--space-lg);
+}
+
+.jd-content ul li {
+  margin-bottom: var(--space-sm);
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+/* ============================ 福利待遇标签 ============================ */
+.jd-benefits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.jd-benefit-tag {
+  padding: 8px 16px;
+  background: rgba(79,110,247,0.1);
+  border: 1px solid rgba(79,110,247,0.2);
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* ============================ 公司数据统计 ============================ */
+.jd-company-stats {
+  display: flex;
+  gap: var(--space-2xl);
+  margin-top: var(--space-lg);
+  padding-top: var(--space-lg);
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.jd-cs-item { text-align: center; }
+
+.jd-cs-num {
+  font-size: 1.5rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--accent), var(--primary-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.jd-cs-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* ============================ 侧边栏 ============================ */
+.jd-sidebar {
+  position: sticky;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.jd-apply-card {
+  text-align: center;
+}
+
+.jd-similar-item {
+  display: block;
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  color: var(--text-primary);
+  transition: color var(--transition-fast);
+}
+
+.jd-similar-item:last-child { border-bottom: none; }
+.jd-similar-item:hover { color: var(--accent); }
+
+/* ============================ 响应式 ============================ */
+@media (max-width: 768px) {
+  .jd-header-top { flex-direction: column; }
+  .jd-salary { font-size: 1.3rem; }
+  .jd-company-stats { flex-direction: column; gap: var(--space-md); }
+  .jd-sidebar { position: static; }
+}

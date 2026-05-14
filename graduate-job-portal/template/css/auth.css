@@ -1,0 +1,233 @@
+/**
+ * 登录/注册页专用样式 - login.html / register.html
+ */
+
+/* ============================ 布局 ============================ */
+.auth-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px var(--space-xl) var(--space-3xl);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 460px;
+  padding: var(--space-3xl);
+  text-align: center;
+}
+
+/* ============================ 头部 ============================ */
+.auth-header {
+  margin-bottom: var(--space-2xl);
+}
+
+.auth-icon {
+  width: 64px; height: 64px;
+  margin: 0 auto var(--space-lg);
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.6rem;
+  color: #fff;
+  box-shadow: 0 8px 30px rgba(79, 110, 247, 0.4);
+}
+
+.auth-header h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: var(--space-sm);
+}
+
+.auth-header p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* ============================ 表单 ============================ */
+.auth-form { text-align: left; }
+
+.input-with-icon {
+  position: relative;
+}
+
+.input-with-icon i:first-child {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  z-index: 1;
+}
+
+.input-with-icon .form-input {
+  padding-left: 44px;
+}
+
+.input-with-icon .toggle-pwd {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px 6px;
+  font-size: 0.9rem;
+  transition: color var(--transition-fast);
+}
+
+.input-with-icon .toggle-pwd:hover { color: var(--text-primary); }
+
+/* 表单行（并排） */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+/* ============================ 选项行 ============================ */
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-lg);
+  font-size: 0.85rem;
+}
+
+.checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color: var(--text-secondary);
+  position: relative;
+  padding-left: 24px;
+}
+
+.checkbox-label input {
+  display: none;
+}
+
+.checkmark {
+  position: absolute;
+  left: 0; top: 50%;
+  transform: translateY(-50%);
+  width: 16px; height: 16px;
+  border: 1.5px solid rgba(255,255,255,0.2);
+  border-radius: 4px;
+  transition: all var(--transition-fast);
+}
+
+.checkbox-label input:checked ~ .checkmark {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.checkmark::after {
+  content: '';
+  position: absolute;
+  display: none;
+  left: 4.5px; top: 1px;
+  width: 4px; height: 8px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkbox-label input:checked ~ .checkmark::after {
+  display: block;
+}
+
+.forgot-link {
+  color: var(--accent);
+  font-size: 0.82rem;
+  transition: color var(--transition-fast);
+}
+.forgot-link:hover { color: var(--primary-light); }
+
+/* ============================ 密码强度 ============================ */
+.pwd-strength {
+  margin-top: var(--space-sm);
+}
+.pwd-bar {
+  width: 100%; height: 4px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+.pwd-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+.pwd-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* ============================ 分隔线 ============================ */
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin: var(--space-xl) 0;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(255,255,255,0.08);
+}
+
+/* ============================ 社交登录 ============================ */
+.social-login {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+.social-btn {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,0.1);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  display: flex; align-items: center; justify-content: center;
+}
+.social-btn:hover {
+  border-color: var(--primary);
+  color: var(--accent);
+  background: rgba(79,110,247,0.08);
+  transform: translateY(-2px);
+}
+
+/* ============================ 页脚链接 ============================ */
+.auth-footer {
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+.auth-footer a {
+  color: var(--accent);
+  font-weight: 600;
+}
+.auth-footer a:hover { text-decoration: underline; }
+
+/* ============================ 响应式 ============================ */
+@media (max-width: 520px) {
+  .auth-card { padding: var(--space-xl) var(--space-lg); }
+  .auth-header h2 { font-size: 1.4rem; }
+  .form-row { grid-template-columns: 1fr; }
+}

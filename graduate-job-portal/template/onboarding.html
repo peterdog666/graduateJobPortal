@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>入职材料清单 - 应届生求职服务平台</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/onboarding.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="bg-animation"><div class="orb"></div><div class="orb"></div><div class="orb"></div></div>
+
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-brand">
+      <div class="logo"><i class="fas fa-rocket"></i></div>
+      <span>应届生求职平台</span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">首页</a>
+      <a href="jobs.html">岗位推荐</a>
+      <a href="offer-compare.html">Offer对比</a>
+      <a href="onboarding.html" class="active">入职清单</a>
+    </div>
+    <div class="nav-actions">
+      <a href="login.html" class="btn btn-ghost">登录</a>
+      <a href="register.html" class="btn btn-primary btn-sm">注册</a>
+      <button class="mobile-menu-btn" id="mobileMenuBtn"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-title">入职材料清单</h1>
+      <p class="page-subtitle">按公司类型生成个性化清单，不再遗漏任何重要文件</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <!-- 公司类型选择 -->
+      <div class="ob-type-selector">
+        <p style="color:var(--text-secondary);margin-bottom:var(--space-lg);font-size:0.95rem;">
+          请选择你的公司类型，获取专属入职材料清单：
+        </p>
+        <div class="ob-types" id="obTypes">
+          <button class="ob-type-btn active" data-type="tech" onclick="switchType(this,'tech')">
+            <i class="fas fa-laptop-code"></i> 互联网/科技大厂
+          </button>
+          <button class="ob-type-btn" data-type="state" onclick="switchType(this,'state')">
+            <i class="fas fa-landmark"></i> 国企/事业单位
+          </button>
+          <button class="ob-type-btn" data-type="foreign" onclick="switchType(this,'foreign')">
+            <i class="fas fa-globe"></i> 外企
+          </button>
+          <button class="ob-type-btn" data-type="sme" onclick="switchType(this,'sme')">
+            <i class="fas fa-building"></i> 中小民企
+          </button>
+        </div>
+      </div>
+
+      <!-- 进度条 -->
+      <div class="ob-progress-wrap">
+        <div class="ob-progress-info">
+          <span>完成进度</span>
+          <span id="obProgressText">0/0 (0%)</span>
+        </div>
+        <div class="ob-progress-bar">
+          <div class="ob-progress-fill" id="obProgressFill" style="width:0%"></div>
+        </div>
+      </div>
+
+      <!-- 清单列表 -->
+      <div class="ob-category" id="obList">
+        <!-- 由JS动态渲染 -->
+      </div>
+
+      <!-- 操作按钮 -->
+      <div class="ob-actions">
+        <button class="btn btn-primary btn-lg" onclick="printChecklist()">
+          <i class="fas fa-print"></i> 打印清单
+        </button>
+        <button class="btn btn-outline" onclick="resetChecklist()">
+          <i class="fas fa-redo"></i> 重置勾选
+        </button>
+      </div>
+
+      <!-- 温馨提示 -->
+      <div class="card ob-tips" style="margin-top:var(--space-2xl);border:1px solid rgba(0,212,255,0.2);">
+        <h4 style="color:var(--accent);margin-bottom:var(--space-md);">
+          <i class="fas fa-lightbulb"></i> 温馨提示
+        </h4>
+        <ul style="color:var(--text-secondary);font-size:0.9rem;line-height:2;padding-left:var(--space-lg);">
+          <li>入职前 1-2 周，HR 会发送详细的入职指引邮件，请仔细阅读</li>
+          <li>部分材料（如无犯罪记录证明）需要提前到户籍所在地办理，建议提前准备</li>
+          <li>体检报告一般要求近期 3 个月内的，不要过早办理</li>
+          <li>工资卡建议提前办理并激活，确保入职第一天能正常接收薪资</li>
+          <li>入职当天建议提前 30 分钟到达，熟悉办公环境和同事</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="justify-content:center"><span>© 2025 应届生求职服务平台</span></div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/onboarding.js"></script>
+</body>
+</html>

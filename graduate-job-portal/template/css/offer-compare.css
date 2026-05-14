@@ -1,0 +1,222 @@
+/**
+ * Offer对比页专用样式 - offer-compare.html
+ */
+
+/* ============================ 控制栏 ============================ */
+.oc-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-2xl);
+  flex-wrap: wrap;
+}
+
+/* ============================ Offer 输入卡片 ============================ */
+.oc-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-xl);
+  margin-bottom: var(--space-2xl);
+}
+
+.oc-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(79,110,247,0.15);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+  backdrop-filter: blur(10px);
+  position: relative;
+  transition: all var(--transition-base);
+}
+
+.oc-card:hover {
+  border-color: rgba(79,110,247,0.3);
+  box-shadow: var(--shadow-glow);
+}
+
+.oc-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-lg);
+}
+
+.oc-card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.oc-card-title .oc-num {
+  width: 28px; height: 28px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  color: #fff;
+}
+
+.oc-remove-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.oc-remove-btn:hover {
+  color: var(--danger);
+  background: rgba(239,68,68,0.1);
+}
+
+/* Offer 输入项 */
+.oc-field {
+  margin-bottom: var(--space-md);
+}
+
+.oc-field label {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.oc-field input,
+.oc-field select {
+  width: 100%;
+  padding: 10px 14px;
+  background: rgba(255,255,255,0.05);
+  border: 1.5px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.oc-field input:focus,
+.oc-field select:focus {
+  border-color: var(--primary);
+}
+
+.oc-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+/* ============================ 对比结果表格 ============================ */
+.oc-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.oc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.oc-table th,
+.oc-table td {
+  padding: 12px 18px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  white-space: nowrap;
+}
+
+.oc-table th {
+  background: rgba(79,110,247,0.08);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.oc-table td {
+  color: var(--text-secondary);
+}
+
+.oc-table tr:hover td {
+  background: rgba(79,110,247,0.05);
+}
+
+.oc-table .best-col {
+  background: rgba(34,197,94,0.08);
+  color: var(--success);
+  font-weight: 700;
+}
+
+.oc-table .worst-col {
+  color: var(--text-muted);
+}
+
+/* ============================ 推荐结果 ============================ */
+.oc-recommend {
+  background: rgba(0,212,255,0.05) !important;
+  border: 1px solid rgba(0,212,255,0.2) !important;
+  padding: var(--space-xl) !important;
+}
+
+.oc-rec-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.oc-rec-icon {
+  width: 48px; height: 48px;
+  background: linear-gradient(135deg, var(--accent), var(--primary));
+  border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+.oc-rec-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.oc-rec-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.oc-rec-reason {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.oc-rec-badges {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  margin-top: var(--space-lg);
+}
+
+.oc-rec-badge {
+  padding: 6px 16px;
+  background: rgba(79,110,247,0.12);
+  border: 1px solid rgba(79,110,247,0.2);
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  color: var(--accent);
+}
+
+/* ============================ 响应式 ============================ */
+@media (max-width: 768px) {
+  .oc-cards { grid-template-columns: 1fr; }
+  .oc-field-row { grid-template-columns: 1fr; }
+  .oc-table th, .oc-table td { padding: 8px 12px; font-size: 0.82rem; }
+}

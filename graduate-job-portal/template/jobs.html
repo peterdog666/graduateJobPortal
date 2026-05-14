@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>校园招聘岗位列表 - 应届生求职服务平台</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/jobs.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="bg-animation"><div class="orb"></div><div class="orb"></div><div class="orb"></div></div>
+
+  <!-- 导航栏 -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-brand">
+      <div class="logo"><i class="fas fa-rocket"></i></div>
+      <span>应届生求职平台</span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">首页</a>
+      <a href="jobs.html" class="active">岗位推荐</a>
+      <a href="offer-compare.html">Offer对比</a>
+      <a href="onboarding.html">入职清单</a>
+    </div>
+    <div class="nav-actions">
+      <a href="login.html" class="btn btn-ghost">登录</a>
+      <a href="register.html" class="btn btn-primary btn-sm">注册</a>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- 页面顶部 -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-title">校园招聘岗位</h1>
+      <p class="page-subtitle">精选2025届校招岗位，大厂/国企/外企全覆盖</p>
+    </div>
+  </section>
+
+  <!-- 筛选 + 列表 -->
+  <section class="section">
+    <div class="container">
+      <!-- 筛选栏 -->
+      <div class="filter-bar card">
+        <div class="filter-row">
+          <div class="filter-group" style="flex:2">
+            <i class="fas fa-search"></i>
+            <input type="text" class="form-input" placeholder="搜索岗位名称/公司名称..." id="searchInput">
+          </div>
+          <div class="filter-group">
+            <select class="form-input" id="filterCity">
+              <option value="">全部城市</option>
+              <option>北京</option><option>上海</option><option>深圳</option>
+              <option>杭州</option><option>广州</option><option>成都</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <select class="form-input" id="filterType">
+              <option value="">全部类型</option>
+              <option>技术</option><option>产品</option><option>设计</option>
+              <option>运营</option><option>市场</option>
+            </select>
+          </div>
+          <button class="btn btn-primary" onclick="applyFilters()">
+            <i class="fas fa-filter"></i> 筛选
+          </button>
+        </div>
+        <!-- 热门标签 -->
+        <div class="filter-tags">
+          <span class="ft-label">热门标签：</span>
+          <button class="ft-tag" onclick="toggleTag(this)">Java后端</button>
+          <button class="ft-tag" onclick="toggleTag(this)">前端开发</button>
+          <button class="ft-tag" onclick="toggleTag(this)">算法工程师</button>
+          <button class="ft-tag" onclick="toggleTag(this)">产品经理</button>
+          <button class="ft-tag" onclick="toggleTag(this)">面试题</button>
+          <button class="ft-tag" onclick="toggleTag(this)">高薪资</button>
+        </div>
+      </div>
+
+      <!-- 结果统计 -->
+      <div class="result-info">
+        <span>共 <strong id="resultCount">0</strong> 个岗位</span>
+        <div class="sort-options">
+          <span>排序：</span>
+          <button class="sort-btn active" onclick="setSort(this,'default')">默认</button>
+          <button class="sort-btn" onclick="setSort(this,'salary')">薪资</button>
+          <button class="sort-btn" onclick="setSort(this,'date')">最新</button>
+        </div>
+      </div>
+
+      <!-- 岗位卡片网格 -->
+      <div class="jobs-grid" id="jobsGrid">
+        <!-- 由JS动态渲染 -->
+      </div>
+
+      <!-- 加载更多 -->
+      <div class="text-center mt-4">
+        <button class="btn btn-outline" id="loadMoreBtn" onclick="loadMore()">
+          <i class="fas fa-plus"></i> 加载更多
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-brand" style="margin-bottom:var(--space-md)">
+            <div class="logo"><i class="fas fa-rocket"></i></div>
+            <span>应届生求职平台</span>
+          </div>
+          <p>专为应届生打造的求职服务平台，提供岗位推荐、Offer对比、入职指导等一站式服务。</p>
+        </div>
+        <div class="footer-col"><h4>服务</h4><a href="jobs.html">岗位推荐</a><a href="offer-compare.html">Offer对比</a><a href="onboarding.html">入职清单</a></div>
+        <div class="footer-col"><h4>关于</h4><a href="#">关于我们</a><a href="#">联系我们</a><a href="#">用户协议</a></div>
+        <div class="footer-col"><h4>关注我们</h4><a href="#"><i class="fab fa-weixin"></i> 微信</a><a href="#"><i class="fab fa-weibo"></i> 微博</a></div>
+      </div>
+      <div class="footer-bottom"><span>© 2025 应届生求职服务平台</span><span>沪ICP备XXXXXXXX号-1</span></div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/jobs.js"></script>
+</body>
+</html>
