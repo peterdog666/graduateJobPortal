@@ -49,7 +49,7 @@
    ```
 2. 打开 `template/` 目录
 3. 双击 `index.html` 即可在浏览器中预览
-4. 可部署到 GitHub Pages / Vercel / Netlify 免费托管
+4. 可部署到 EdgeOne pages / GitHub Pages / Vercel / Netlify 免费托管
 
 ---
 
